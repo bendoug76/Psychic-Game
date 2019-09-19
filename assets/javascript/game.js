@@ -1,6 +1,6 @@
 
 var letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o",
-                "p","q","r","s","t","u","v","w","x","y","z"];
+                "p","q","r","s","t","u","v","w","x","y","z",];
 var wins = 0;
 var losses = 0;
 var guessesLeft = 9;
@@ -13,7 +13,7 @@ document.onkeydown = function(event) {
     var comGuess = letters [Math.floor(Math.random() * letters.length)];
 
     var userInput = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o",
-    "p","q","r","s","t","u","v","w","x","y","z"];
+    "p","q","r","s","t","u","v","w","x","y","z",];
 
     if (userInput.indexOf(userGuess) > -1){
         if (userGuess === comGuess){
@@ -24,7 +24,7 @@ document.onkeydown = function(event) {
 
         if (userGuess != comGuess){
             guessesLeft --;
-            yourGuesses.push(userInput);
+            yourGuesses.push(userGuess);
         }
 
         if (guessesLeft === 0){
@@ -40,7 +40,7 @@ document.onkeydown = function(event) {
     "<p>Wins: " + wins + "</p>" +
     "<p>Losses: " + losses + "</p>" +
     "<p>Guesses Left: " + guessesLeft + "</p>" +
-    "<p>Your guesses so far: " + yourGuesses.join(",") + "</p>" 
+    "<p>Your guesses so far: " + yourGuesses.join(", ") + "</p>"; 
         
     document.querySelector("#game").innerHTML = html;
 
